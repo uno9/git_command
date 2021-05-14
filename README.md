@@ -1,2 +1,2 @@
 # git_command
-Hello mina-san!
+Hello mina-san!!!!!!!!!
