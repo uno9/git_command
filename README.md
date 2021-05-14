@@ -1,11 +1,12 @@
 # git_command
 Hello mina-san!
 
-テスト
+----
+edit from hanh's branch.
 
 こんにちは
+こんにちは
 こんばんは
-
 
 ## Ueno git command log
 
@@ -44,4 +45,3 @@ git reset --soft <commit id>
 * 実行すると、**×stashが生成される**のではなく**変更として復活**する
 * 変更を選択して新たなstashを生成することで、元に戻せる
 * https://zenn.dev/snowcait/articles/7ba0720db50aea28c652
-
