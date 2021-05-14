@@ -1,15 +1,17 @@
 # git_command
 Hello mina-san!
+便利なコマンドやオプションを書き溜めていきましょう。
+
+# 宮下
+
+# 上野
+
+# 中田
+
+# ハイン
+
+# 千田
+
+# 瀧野
 
 
-----
-edit from hanh's branch.
-
-
-こんにちは
-こんにちは
-こんばんは
-
-----
-edit from hanh's branch.
-edit from ueno's branch.
