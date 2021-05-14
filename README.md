@@ -5,7 +5,8 @@ Hello mina-san!
 ## 宮下
 
 ## 上野
-**git miss command**  
+
+#### gitでミスをしたときの対処法
 
 1.push先を間違えたけど、変更を残したまま、戻したい
 ```
