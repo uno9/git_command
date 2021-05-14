@@ -1,7 +1,15 @@
 # git_command
 Hello mina-san!
 
-テスト
+
+----
+edit from hanh's branch.
+
 
 こんにちは
+こんにちは
 こんばんは
+
+----
+edit from hanh's branch.
+
