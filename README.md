@@ -12,7 +12,6 @@ Hello mina-san!
 git reset HEAD <ファイル名>	ステージング登録取り消し
 git reset --hard HEAD^	直前のコミットを取り消す(ワークディレクトリの内容を書き換える)
 git reset --soft HEAD^	直前のコミットを取り消す(ワークディレクトリの内容をそのまま)
-git reset --mixed　ステージしたものを取り消す
 
 ・HEADについて
 HEAD^　直前コミット
