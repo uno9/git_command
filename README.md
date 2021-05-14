@@ -1,15 +1,10 @@
 # git_command
 Hello mina-san!
+便利なコマンドやオプションを書き溜めていきましょう。
 
-----
-edit from hanh's branch.
+## 宮下
 
-こんにちは
-こんにちは
-こんばんは
-
-## Ueno git command log
-
+## 上野
 **git miss command**  
 
 1.push先を間違えたけど、変更を残したまま、戻したい
@@ -45,3 +40,13 @@ git reset --soft <commit id>
 * 実行すると、**×stashが生成される**のではなく**変更として復活**する
 * 変更を選択して新たなstashを生成することで、元に戻せる
 * https://zenn.dev/snowcait/articles/7ba0720db50aea28c652
+
+* [Gitでやらかした時に使える19個の奥義](https://qiita.com/muran001/items/dea2bbbaea1260098051)
+
+## 中田
+
+## ハイン
+
+## 千田
+
+## 瀧野
