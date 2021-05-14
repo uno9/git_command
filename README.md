@@ -10,7 +10,7 @@ ailasは便利なので絶対設定してください！！
 checkout, branchやcommitなどの文字を省略できる機能です。
 
 設定前: git checkout master
-設定後: git ck master
+設定後: git co master
 
 設定前: git branch -D test
 設定後: git br -D test
