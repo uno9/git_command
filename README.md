@@ -18,7 +18,8 @@ git reset --soft <commit id>
   * logの内、最新の1件を表示する
 * 変更したデータを**残した**まま**直前**のcommitを戻したい！
   * `git reset --soft HEAD^`
-* http://www-creators.com/archives/1116#1_git_commit
+* [
+git commit を取り消して元に戻す方法、徹底まとめ](http://www-creators.com/archives/1116#1_git_commit)
 
 3.stashを間違えて削除した…戻したい…
 * 削除するstashを間違えたときに、過去の変更データを捜索して戻す
@@ -39,7 +40,7 @@ git reset --soft <commit id>
 
 * 実行すると、**×stashが生成される**のではなく**変更として復活**する
 * 変更を選択して新たなstashを生成することで、元に戻せる
-* https://zenn.dev/snowcait/articles/7ba0720db50aea28c652
+* [git stashを復元する](https://zenn.dev/snowcait/articles/7ba0720db50aea28c652)
 
 * [Gitでやらかした時に使える19個の奥義](https://qiita.com/muran001/items/dea2bbbaea1260098051)
 
