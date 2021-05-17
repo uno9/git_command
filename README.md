@@ -12,7 +12,7 @@ Hello mina-san!
 
 ## 千田 
 ### rebaseでできるあれこれ
-#### ①rebaseでコミットをやり直す
+#### ①rebaseでコミットの内容をやり直す
 1.  `$ git rebase -i <コミットIDかHEADの指定>`でコミットを表示する。（`git log` とは逆に表示される）
 ```
 （例）
@@ -42,7 +42,7 @@ pick 9a34966 commit comment 4
 # r, reword = use commit, but edit the commit message
 # p, pick = use commit
 ```
-2. 修正したいコミットを`pick`から`edit`にする。（この時、editのところでコミットの適用が止まる）
+2. 修正したいコミットを`pick`から`edit`にする。（この時、editのところでコミットの適用が止まる。rebase中とも言う）
 ```
 pick 3ba3a2e commit comment 1
 edit 6ef356e commit comment 2
@@ -52,6 +52,8 @@ pick 9a34966 commit comment 4
 3. エディタでファイルの内容を編集する
 4. `$ git commit --amend`でコミットメッセージを変更
 5. `$ git rebase --continue`で`edit`で止めていたコミットを適用させる。
+
+
 
 
 #### ②rebaseでコミットをやり直す
@@ -75,9 +77,15 @@ pick 6ef356e commit comment 2
 fixup d84a911 commit comment 3
 fixup 9a34966 commit comment 4
 ```
-3. `$ git commit --ammend`でコミットメッセージを変更する
+
 
 ※ `$ git commit --fixup`でデフォルトでfixupの状態にしてからコミットすることができる。
+
+※　コミットメッセージの変更が必要ない場合は`fixup`、コミットメッセージの変更をしたいときは`squash`
+
+
+
+
 
 
 ### マージとリベースの使い分け（簡略版）
