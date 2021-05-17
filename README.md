@@ -29,6 +29,20 @@ checkout, branchやcommitなどの文字を省略できる機能です。
 設定の仕方は色々ありますが、下記のサイトではワンラインで済むものがまとめられています。
 https://dev.classmethod.jp/articles/git-config-alias-19/
 
+### 3.　gitのTAB補完機能
+
+gitのコマンド叩いてて、linuxみたいにコマンド補完できたらなあ〜って時に使えます。
+全員やってください！笑
+
+gitコマンドだけでなくブランチ名や、オプションもtabで入力補完できます。
+
+```
+$ cp /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash /usr/local/etc/bash_completion.d/  (cpでgit-completion.bashを移動)
+$ source /usr/local/etc/bash_completion.d/git-completion.bash  (sourceで適用)
+
+(注意)/Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bashに、git-completion.bashがない人はfindコマンドでどこにあるか探してくださいね。
+```
+
 ## 上野
 
 ### gitでミスをしたときの対処法
