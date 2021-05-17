@@ -31,6 +31,49 @@ https://dev.classmethod.jp/articles/git-config-alias-19/
 
 ## 上野
 
+### cloneをして、作業する
+
+※ clone後の特殊な状況で作業をするときに使うコマンド
+
+1.前作業していたブランチでまた作業したい！
+* 状況｜開発中にリポジトリがおかしくなって、再cloneをした
+
+  ```
+  git fecth
+  git branch -a
+  git checkout -b <作成したいブランチ名> origin/<作業したいブランチ名>
+  ```
+
+  sample:
+  ```
+    git fetch
+    git branch -a
+    * main
+    remotes/origin/HEAD -> origin/main
+    remotes/origin/add-introduction
+    remotes/origin/alias
+    remotes/origin/chida
+    remotes/origin/chida_branch
+    remotes/origin/feature/push
+    remotes/origin/git_miss_command_tips
+    (抜粋)
+    git checkout git_miss_command_tips
+  ```
+
+2.cloneしたリポジトリのdevelopブランチから新しいブランチを作りたい
+* 上記の別パターン
+
+  ```
+  git fecth
+  git checkout -b <作成したいブランチ名> origin/develop
+  ```
+
+3.特定のブランチのみcloneする
+* 状況｜cloneしたいブランチが決まっている場合に使用する
+  * 特定のブランチのみのcloneになるため、取得するコミットの履歴数を抑えることができる
+  * `git clone リポジトリ名 -b ブランチorタグ名`
+* 参考｜[Gitで特定のブランチorタグをcloneする](https://qiita.com/iaoiui/items/fc318fa75cce3227b638)
+
 ### gitでミスをしたときの対処法
 
 1.push先を間違えたけど、変更を残したまま、戻したい
