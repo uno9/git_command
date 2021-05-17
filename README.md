@@ -4,16 +4,27 @@ Hello mina-san!
 
 ## 宮下
 
-1. ailasについて
+### 1. pushについての小技
+
+「git push origin <ブランチ名>」するときにブランチ名が必要で毎回、「git branch --contains」や「git branch」でブランチ名を探してpushしたことありませんか？
+
+そんなときに「git push origin HEAD」を使えば自動的に自分の今いるブランチを指定してプッシュしてくれます。
+
+https://reasonable-code.com/git-push-origin-head/
+※HEADでもheadでも大文字、小文字関係なくいけます。
+
+### 2. ailasについて
 
 ailasは便利なので絶対設定してください！！
 checkout, branchやcommitなどの文字を省略できる機能です。
 
+```
 設定前: git checkout master
 設定後: git co master
 
 設定前: git branch -D test
 設定後: git br -D test
+```
 
 設定の仕方は色々ありますが、下記のサイトではワンラインで済むものがまとめられています。
 https://dev.classmethod.jp/articles/git-config-alias-19/
