@@ -81,6 +81,13 @@ git reset --soft HEAD^	直前のコミットを取り消す(ワークディレ�
 HEAD^　直前コミット
 HEAD~{n}　n個前のコミット
 
+・git revertについて
+
+git revert <commit>　コミットIDを指定することで、そのコミットを打ち消すようなコミットが新しく追加さる
+git revert <commit> -e revertコミットを行なうときに、コミットメッセージの編集を行なうかどうかをオプションで指定できる
+git revert <commit> -n　indexに戻すだけでコミットを行なわないようにすることもでる
+git revert -m 1 <commit>　マージコミットを取り消そうとした場合、マージした2つのコミット(親)のうちどちらに戻すのかを指定する必要があり、-mオプションの後に戻したい親を数字で指定できる
+git showやgit logで親の数字がわかる
 
 ## ハイン
 
