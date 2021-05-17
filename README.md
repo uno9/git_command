@@ -66,7 +66,6 @@ git commit を取り消して元に戻す方法、徹底まとめ](http://www-cr
 ## 千田
 
 ## 瀧野
-
 ### git resetについて
 
 git resetには3種類のオプションがある
