@@ -60,6 +60,11 @@ https://dev.classmethod.jp/articles/git-config-alias-19/
     git checkout git_miss_command_tips
   ```
 
+  * コマンド説明
+    * [git fetch](https://www-creators.com/archives/1272)|cloneしたリモートブランチの履歴を取得
+    * git branch -a |リモートブランチに存在している全てのブランチ情報を表示
+    * git checkout -b |ブランチを新規作成し、ブランチの移動をおこなう
+
 2.cloneしたリポジトリのdevelopブランチから新しいブランチを作りたい
 * 上記の別パターン
 
