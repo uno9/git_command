@@ -39,7 +39,7 @@ https://dev.classmethod.jp/articles/git-config-alias-19/
 * 状況｜開発中にリポジトリがおかしくなって、再cloneをした
 
   ```
-  git fecth
+  git fetch
   git branch -a
   git checkout -b <作成したいブランチ名> origin/<作業したいブランチ名>
   ```
@@ -69,7 +69,7 @@ https://dev.classmethod.jp/articles/git-config-alias-19/
 * 上記の別パターン
 
   ```
-  git fecth
+  git fetch
   git checkout -b <作成したいブランチ名> origin/develop
   ```
 
