@@ -45,6 +45,54 @@ $ source /usr/local/etc/bash_completion.d/git-completion.bash  (sourceで適用)
 
 ## 上野
 
+### cloneをして、作業する
+
+※ clone後の特殊な状況で作業をするときに使うコマンド
+
+1.前作業していたブランチでまた作業したい！
+* 状況｜開発中にリポジトリがおかしくなって、再cloneをした
+
+  ```
+  git fetch
+  git branch -a
+  git checkout -b <作成したいブランチ名> origin/<作業したいブランチ名>
+  ```
+
+  sample:
+  ```
+    git fetch
+    git branch -a
+    * main
+    remotes/origin/HEAD -> origin/main
+    remotes/origin/add-introduction
+    remotes/origin/alias
+    remotes/origin/chida
+    remotes/origin/chida_branch
+    remotes/origin/feature/push
+    remotes/origin/git_miss_command_tips
+    (抜粋)
+    git checkout git_miss_command_tips
+  ```
+
+  * コマンド説明
+    * [git fetch](https://www-creators.com/archives/1272)|cloneしたリモートブランチの履歴を取得
+    * git branch -a |リモートブランチに存在している全てのブランチ情報を表示
+    * git checkout -b |ブランチを新規作成し、ブランチの移動をおこなう
+
+2.cloneしたリポジトリのdevelopブランチから新しいブランチを作りたい
+* 上記の別パターン
+
+  ```
+  git fetch
+  git checkout -b <作成したいブランチ名> origin/develop
+  ```
+
+3.特定のブランチのみcloneする
+* 状況｜cloneしたいブランチが決まっている場合に使用する
+  * 特定のブランチのみのcloneになるため、取得するコミットの履歴数を抑えることができる
+  * `git clone リポジトリ名 -b ブランチorタグ名`
+* 参考｜[Gitで特定のブランチorタグをcloneする](https://qiita.com/iaoiui/items/fc318fa75cce3227b638)
+
 ### gitでミスをしたときの対処法
 
 1.push先を間違えたけど、変更を残したまま、戻したい
@@ -85,6 +133,27 @@ git commit を取り消して元に戻す方法、徹底まとめ](http://www-cr
 * [Gitでやらかした時に使える19個の奥義](https://qiita.com/muran001/items/dea2bbbaea1260098051)
 
 ## 中田
+
+### git resetの使い方一覧
+- git reset HEAD <ファイル名>・・・ステージング登録取り消し
+- git reset --hard HEAD^・・・直前のコミットを取り消す(ワークディレクトリの内容を書き換える)
+- git reset --soft HEAD^・・・直前のコミットを取り消す(ワークディレクトリの内容をそのまま)
+
+### HEADオプションについて
+- HEAD^・・・複数ある親コミットのなかからコミットを指定できる
+- HEAD~{n}・・・n個前のコミットを指定できる
+
+### hardオプションの例を紹介
+- hard HEAD@{n}・・・特定の時点までファイルを巻き戻す（nには戻りたい地点の数字を入力）
+
+### git revertについて
+
+- git revert <commit>・・・コミットIDを指定することで、そのコミットを打ち消すようなコミットが新しく追加させる。
+- git revert <commit> -e・・・revertコミットを行なうときに、コミットメッセージの編集を行なうかどうかをオプションで指定できる。
+- git revert <commit> -n・・・indexに戻すだけでコミットを行なわないようにすることもできる。
+- git revert -m 1 <commit>・・・マージコミットを取り消そうとした場合、-mオプションで戻したい親を数字で指定できる。git showやgit logで親の数字がわかる。
+
+
 
 ## ハイン
 <br>
@@ -162,3 +231,34 @@ git resetには3種類のオプションがある
 - [第6話 git reset 3種類をどこよりもわかりやすい図解で解説！【連載】マンガでわかるGit ～コマンド編～
 マンガ・Git 連載・コラム スキルアップ
 ](https://www.r-staffing.co.jp/engineer/entry/20191129_1)
+
+### 綺麗なPRを書こう
+※このPRの書き方はRubyサブシステムチームで学んだことが主になってます。どのチームでも通用する内容ではないと思うのですが、個人的に分かりやすかったので共有します。
+
+#### 1. 綺麗なPRとは？
+誰が見ても（社内、社外問わず）、このPRでどんな変更を加えるのかが一目で分かるPR
+
+#### 2. PRを綺麗に書くメリット
+- レビュアーなど、PRを確認する人にとって必要な情報が詰まってるので分かりやすい
+- 開発の背景、目的、ゴールなどを自分が再確認できる
+- 実装やテストの抜け漏れを防ぐ
+- 事前に開発の内容を細かく書くことで、予定工数が書きやすくなる
+
+#### 3. 書く内容（**太文字**は必須）
+- **issueの背景と目的**
+- **関連するチケットのURL**
+- **PRがマージされたときの状態（ゴール）**
+- **開発方針**とその方針を選んだ理由
+- PR内容を理解するために必要な情報（前提知識、修正に該当するページのスクショなど）
+- **開発の具体的な内容**（チェックボックスを用いる）
+- **テストの具体的な内容**（チェックボックスを用いる）
+- レビューして欲しい箇所、不安な箇所
+- 今回保留した内容
+
+#### 4. 注意点
+- 社外の方やチームメンバー以外の方にPRを見てもらう時は、前提知識などを分かりやすく書く
+- 開発とテストの具体的な内容について
+  - あらゆるケースを全て書き出し、ケースごとにとる対応を明記する
+  - 開発の進捗を分かりやすくするため、開発終了したものにチェックを入れる
+  - レビュー依頼する時には全てチェックが入っている状態にする
+- チームによってPRの書き方は様々だと思うので、臨機応変に対応してください
