@@ -29,6 +29,20 @@ checkout, branchやcommitなどの文字を省略できる機能です。
 設定の仕方は色々ありますが、下記のサイトではワンラインで済むものがまとめられています。
 https://dev.classmethod.jp/articles/git-config-alias-19/
 
+### 3.　gitのTAB補完機能
+
+gitのコマンド叩いてて、linuxみたいにコマンド補完できたらなあ〜って時に使えます。
+全員やってください！笑
+
+gitコマンドだけでなくブランチ名や、オプションもtabで入力補完できます。
+
+```
+$ cp /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash /usr/local/etc/bash_completion.d/  (cpでgit-completion.bashを移動)
+$ source /usr/local/etc/bash_completion.d/git-completion.bash  (sourceで適用)
+
+(注意)/Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bashに、git-completion.bashがない人はfindコマンドでどこにあるか探してくださいね。
+```
+
 ## 上野
 
 ### cloneをして、作業する
@@ -217,6 +231,7 @@ git resetには3種類のオプションがある
 - [第6話 git reset 3種類をどこよりもわかりやすい図解で解説！【連載】マンガでわかるGit ～コマンド編～
 マンガ・Git 連載・コラム スキルアップ
 ](https://www.r-staffing.co.jp/engineer/entry/20191129_1)
+
 ### 綺麗なPRを書こう
 ※このPRの書き方はRubyサブシステムチームで学んだことが主になってます。どのチームでも通用する内容ではないと思うのですが、個人的に分かりやすかったので共有します。
 
@@ -247,4 +262,3 @@ git resetには3種類のオプションがある
   - 開発の進捗を分かりやすくするため、開発終了したものにチェックを入れる
   - レビュー依頼する時には全てチェックが入っている状態にする
 - チームによってPRの書き方は様々だと思うので、臨機応変に対応してください
-
